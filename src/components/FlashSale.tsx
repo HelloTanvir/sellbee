@@ -1,6 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import Slider from 'react-slick';
+import { A11y, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const FlashSale = () => {
     const slides = [
@@ -14,9 +15,9 @@ const FlashSale = () => {
     return (
         <div
             style={{ backgroundColor: '#a1e887' }}
-            className="flex gap-24 py-8 px-14 rounded-2xl mx-p-w"
+            className="flex gap-24 px-16 py-12 rounded-2xl mx-p-w mb-7"
         >
-            <div className="flex flex-col gap-3 text-white bg-red-400" style={{ flex: 1.2 }}>
+            <div className="flex flex-col flex-1 gap-3 text-white">
                 <span className="text-2xl font-semibold tracking-wide font-poppins">
                     Flash Sale
                 </span>
@@ -31,42 +32,69 @@ const FlashSale = () => {
                 </span>
             </div>
 
-            <div className="bg-red-400" style={{ flex: 2.8 }}>
-                <Slider infinite slidesToShow={2} speed={300}>
+            <div className="flex flex-col justify-between w-full" style={{ maxWidth: '70%' }}>
+                <Swiper
+                    className="w-full"
+                    modules={[Pagination, A11y]}
+                    slidesPerView={3}
+                    spaceBetween={30}
+                    pagination={{ clickable: true }}
+                >
                     {slides.map((slide) => (
-                        <div className="flex w-56 gap-2 py-2 pl-2 bg-white rounded-xl font-poppins">
-                            <img
-                                src={slide.image}
-                                alt={slide.name}
-                                className="w-16 h-20 rounded-xl"
-                            />
-                            <div className="flex flex-col justify-between">
-                                <span
-                                    className="font-medium tracking-wide"
-                                    style={{ fontSize: 10 }}
-                                >
-                                    {slide.name}
-                                </span>
+                        <SwiperSlide key={slide.image}>
+                            <div className="flex w-64 gap-3 py-2 pl-2 bg-white rounded-xl font-poppins">
+                                <img
+                                    src={slide.image}
+                                    alt={slide.name}
+                                    className="w-16 h-20 rounded-xl"
+                                />
+                                <div className="flex flex-col justify-between pb-2">
+                                    <span
+                                        className="font-medium tracking-wide"
+                                        style={{ fontSize: 10 }}
+                                    >
+                                        {slide.name}
+                                    </span>
 
-                                <div className="flex flex-col">
-                                    <div className="flex">
-                                        <span className="text-xs font-semibold tracking-wide">
-                                            BDT {slide.price}
-                                        </span>
+                                    <div className="flex flex-col">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <span className="text-xs font-semibold tracking-wide">
+                                                BDT {slide.price}
+                                            </span>
 
-                                        <span
-                                            style={{ color: '#A7A7A7', fontSize: 10 }}
-                                            className="font-normal"
+                                            <span
+                                                style={{ color: '#A7A7A7', fontSize: 10 }}
+                                                className="font-normal"
+                                            >
+                                                {slide.count} left
+                                            </span>
+                                        </div>
+                                        <div
+                                            style={{
+                                                height: 5,
+                                                borderRadius: 2.5,
+                                                backgroundColor: 'rgba(20, 20, 255, 0.3)',
+                                            }}
+                                            className="relative w-32"
                                         >
-                                            {slide.count} left
-                                        </span>
+                                            <div
+                                                className="absolute top-0 bottom-0 left-0 w-4/5 bg-bg-primary"
+                                                style={{ borderRadius: 2.5 }}
+                                            />
+                                        </div>
                                     </div>
-                                    <div>sroll effect</div>
                                 </div>
                             </div>
-                        </div>
+                        </SwiperSlide>
                     ))}
-                </Slider>
+                </Swiper>
+
+                <span
+                    className="self-end font-bold text-white cursor-pointer font-poppins"
+                    style={{ fontSize: 8 }}
+                >
+                    View more
+                </span>
             </div>
         </div>
     );

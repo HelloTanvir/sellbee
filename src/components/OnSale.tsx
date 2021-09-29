@@ -87,7 +87,14 @@ const OnSale = () => {
                 <span className="text-2xl font-semibold tracking-wide font-poppins">On Sale</span>
             </div>
 
-            <div className="on-sale-grid">
+            <div
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, 160px)',
+                    gridRowGap: 40,
+                    gridColumnGap: 32,
+                }}
+            >
                 {products.map((product) => (
                     <Product
                         key={product.image}

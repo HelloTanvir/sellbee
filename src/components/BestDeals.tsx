@@ -73,9 +73,21 @@ const BestDeals = () => {
                 Best Deals
             </div>
 
-            <div className="px-3 best-deals-grid">
+            <div
+                className="px-3"
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, 140px)',
+                    gridRowGap: 50,
+                    gridColumnGap: 64,
+                }}
+            >
                 {products.map((product) => (
-                    <div className="flex justify-between" style={{ height: 70 }}>
+                    <div
+                        key={product.image}
+                        className="flex justify-between"
+                        style={{ height: 70 }}
+                    >
                         <img
                             src={product.image}
                             alt={product.name}

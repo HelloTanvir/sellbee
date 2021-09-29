@@ -7,17 +7,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.on-sale-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 160px);
-  grid-row-gap: 40px;
-  grid-column-gap: 32px;
-}
-
-.best-deals-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 140px);
-  grid-row-gap: 50px;
-  grid-column-gap: 64px;
-}

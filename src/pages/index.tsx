@@ -1,10 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import BestDeals from '../components/BestDeals';
+import FlashSale from '../components/FlashSale';
 import ImageSlider from '../components/ImageSlider';
 import Offerings from '../components/Offerings';
 import OnSale from '../components/OnSale';
 import SpecialOffers from '../components/SpecialOffers';
+import TopTenProducts from '../components/TopTenProducts';
 
 const Home: NextPage = () => (
     <div>
@@ -16,7 +18,8 @@ const Home: NextPage = () => (
 
         <main className="mt-10">
             <ImageSlider />
-            {/* <FlashSale /> */}
+            <FlashSale />
+            <TopTenProducts />
             <SpecialOffers />
             <BestDeals />
             <Offerings />

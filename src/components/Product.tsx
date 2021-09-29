@@ -6,11 +6,23 @@ interface Props {
     oldPrice: number;
     name: string;
     stock?: number;
+    description?: string;
+    starCount?: number;
 }
 
-const Product: React.FC<Props> = ({ image, name, oldPrice, newPrice, stock }) => (
+const Product: React.FC<Props> = ({
+    image,
+    name,
+    oldPrice,
+    newPrice,
+    stock,
+    description,
+    starCount,
+}) => (
     <div
-        className="flex flex-col items-center gap-4 pb-4 rounded-2xl"
+        className={`flex flex-col ${
+            description && starCount ? 'items-center bg-white' : ''
+        } gap-4 pb-4 rounded-2xl`}
         style={{ boxShadow: '0px 3px 3px 0 rgba(0, 0, 0, 0.06)' }}
     >
         <img
@@ -20,16 +32,55 @@ const Product: React.FC<Props> = ({ image, name, oldPrice, newPrice, stock }) =>
             style={{ height: 133 }}
         />
 
-        <div className="flex flex-col items-center gap-1 font-poppins">
-            <span className="text-sm font-semibold text-bg-primary">BDT {newPrice}</span>
-            <span style={{ color: '#8D8D8D' }} className="text-xs font-normal">
-                BDT {oldPrice}
-            </span>
-        </div>
+        {description && starCount ? null : (
+            <div className="flex flex-col items-center gap-1 font-poppins">
+                <span className="text-sm font-semibold text-bg-primary">BDT {newPrice}</span>
+                <span style={{ color: '#8D8D8D' }} className="text-xs font-normal">
+                    BDT {oldPrice}
+                </span>
+            </div>
+        )}
 
-        <span className="font-semibold font-poppins" style={{ fontSize: 13, maxWidth: 124 }}>
-            {name}
-        </span>
+        {description && starCount ? (
+            <div className="flex flex-col gap-1">
+                <span className="font-semibold font-poppins">{name}</span>
+                <span className="font-medium font-poppins" style={{ fontSize: 9 }}>
+                    {description}
+                </span>
+            </div>
+        ) : (
+            <span className="font-semibold font-poppins" style={{ fontSize: 13, maxWidth: 124 }}>
+                {name}
+            </span>
+        )}
+
+        {description && starCount ? (
+            <div className="flex">
+                <span className="text-sm font-semibold text-bg-primary">BDT {newPrice}</span>
+                <span style={{ color: '#8D8D8D' }} className="flex-1 ml-2 text-xs font-normal">
+                    BDT {oldPrice}
+                </span>
+                <div className="flex items-center">
+                    {[...Array(starCount)].map((c, i) => (
+                        // eslint-disable-next-line react/no-array-index-key
+                        <span key={i} style={{ marginRight: i !== starCount - 1 ? 2 : 0 }}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="7.464"
+                                height="6.786"
+                                viewBox="0 0 7.464 6.786"
+                            >
+                                <path
+                                    id="star"
+                                    d="M153.331,696.736l-.911,1.754-2.038.282a.419.419,0,0,0-.247.724l1.475,1.365-.349,1.928a.442.442,0,0,0,.648.446l1.823-.91,1.824.91a.442.442,0,0,0,.647-.446l-.349-1.928,1.475-1.365a.419.419,0,0,0-.247-.724l-2.038-.282-.911-1.754A.458.458,0,0,0,153.331,696.736Z"
+                                    transform="translate(-150 -696.5)"
+                                />
+                            </svg>
+                        </span>
+                    ))}
+                </div>
+            </div>
+        ) : null}
 
         {stock ? (
             <>
