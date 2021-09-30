@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Navbar = () => {
     const categories = [
         'All Categories',
@@ -26,7 +28,7 @@ const Navbar = () => {
                     key={category}
                     className="font-normal tracking-wider cursor-pointer text-bg-primary"
                 >
-                    {category}
+                    <Link href={category.toLowerCase().replace(' ', '-')}>{category}</Link>
                 </span>
             ))}
         </div>

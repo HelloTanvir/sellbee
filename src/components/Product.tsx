@@ -21,8 +21,8 @@ const Product: React.FC<Props> = ({
 }) => (
     <div
         className={`flex flex-col ${
-            description && starCount ? 'items-center bg-white' : ''
-        } gap-4 pb-4 rounded-2xl`}
+            description && starCount ? '' : 'items-center'
+        } bg-white gap-4 pb-4 rounded-2xl`}
         style={{ boxShadow: '0px 3px 3px 0 rgba(0, 0, 0, 0.06)' }}
     >
         <img
@@ -42,7 +42,7 @@ const Product: React.FC<Props> = ({
         )}
 
         {description && starCount ? (
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 px-4">
                 <span className="font-semibold font-poppins">{name}</span>
                 <span className="font-medium font-poppins" style={{ fontSize: 9 }}>
                     {description}
@@ -55,9 +55,12 @@ const Product: React.FC<Props> = ({
         )}
 
         {description && starCount ? (
-            <div className="flex">
+            <div className="flex px-4">
                 <span className="text-sm font-semibold text-bg-primary">BDT {newPrice}</span>
-                <span style={{ color: '#8D8D8D' }} className="flex-1 ml-2 text-xs font-normal">
+                <span
+                    style={{ color: '#8D8D8D' }}
+                    className="self-center flex-1 ml-2 text-xs font-normal"
+                >
                     BDT {oldPrice}
                 </span>
                 <div className="flex items-center">

@@ -79,7 +79,7 @@ const TopTenProducts = () => {
                 <Swiper className="w-full" slidesPerView={4} spaceBetween={30}>
                     {products.map((product) => (
                         <SwiperSlide key={product.image}>
-                            <div className="w-44">
+                            <div className="w-48">
                                 <Product
                                     name={product.name}
                                     oldPrice={product.oldPrice}
