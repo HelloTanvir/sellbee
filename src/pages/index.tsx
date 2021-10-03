@@ -16,8 +16,10 @@ const Home: NextPage = () => (
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main className="mt-10">
-            <ImageSlider />
+        <main className="mt-10 overflow-hidden">
+            <div className="home-slider-container">
+                <ImageSlider />
+            </div>
             <FlashSale />
             <TopTenProducts />
             <SpecialOffers />

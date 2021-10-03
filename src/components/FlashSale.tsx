@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import { A11y, Pagination } from 'swiper';
+import { A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const FlashSale = () => {
@@ -35,10 +35,11 @@ const FlashSale = () => {
             <div className="flex flex-col justify-between w-full" style={{ maxWidth: '70%' }}>
                 <Swiper
                     className="w-full"
-                    modules={[Pagination, A11y]}
+                    // modules={[Pagination, A11y]}
+                    modules={[A11y]}
                     slidesPerView={3}
                     spaceBetween={30}
-                    pagination={{ clickable: true }}
+                    // pagination={{ clickable: true }}
                 >
                     {slides.map((slide) => (
                         <SwiperSlide key={slide.image}>

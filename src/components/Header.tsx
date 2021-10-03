@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { BsGrid } from 'react-icons/bs';
 import { FaUserCircle } from 'react-icons/fa';
@@ -11,8 +12,10 @@ const Header = () => (
         <Topbar />
 
         <div className="flex items-center justify-between px-10 py-5 space-x-9">
-            <div>
-                <img src="/logo.svg" alt="logo" />
+            <div className="cursor-pointer">
+                <Link href="/">
+                    <img src="/logo.svg" alt="logo" />
+                </Link>
             </div>
 
             <div className="flex-1 px-8">

@@ -1,9 +1,13 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import { A11y, Autoplay, Navigation, Pagination, Scrollbar } from 'swiper';
+import { A11y, Autoplay, Pagination, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-const ImageSlider = () => {
+interface Props {
+    pageName?: string;
+}
+
+const ImageSlider: React.FC<Props> = ({ pageName }) => {
     // const images = [
     //     'https://i.pinimg.com/236x/f4/a9/88/f4a988da04447569eb2737fd90abf7db.jpg',
     //     'https://i.pinimg.com/236x/fc/30/03/fc300326f05b858943d9c7b6d5902ee0.jpg',
@@ -21,21 +25,35 @@ const ImageSlider = () => {
     ];
 
     return (
-        <div className="mb-16">
+        <div
+            className={`${pageName && pageName === 'all-categories' ? 'mb-11' : 'mb-16'}`}
+            style={
+                pageName && pageName === 'all-categories'
+                    ? {}
+                    : { marginLeft: '-60%', marginRight: '-60%' }
+            }
+        >
             <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-                spaceBetween={50}
-                slidesPerView={1}
-                navigation
+                modules={[Pagination, Scrollbar, A11y, Autoplay]}
+                spaceBetween={pageName && pageName === 'all-categories' ? 60 : 0}
+                centeredSlides
+                slidesPerView={pageName && pageName === 'all-categories' ? 1 : 3}
                 autoplay
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
             >
-                {images.map((image, index) => (
+                {images.map((image) => (
                     <SwiperSlide key={image}>
-                        <img src={image} alt={`Slide -${index}`} className="w-full" />
+                        <div
+                            style={{
+                                backgroundImage: `url(${image})`,
+                                height: pageName && pageName === 'all-categories' ? 196 : 322,
+                                borderRadius: 20,
+                            }}
+                            className="bg-no-repeat bg-cover"
+                        />
                     </SwiperSlide>
                 ))}
             </Swiper>
