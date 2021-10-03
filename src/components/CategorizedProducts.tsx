@@ -74,7 +74,7 @@ const CategorizedProducts = () => {
             name: 'test 5',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://picsum.photos/800/305/?random',
         },
         {
             name: 'test 6',
