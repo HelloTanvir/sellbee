@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 interface Props {
@@ -25,12 +26,14 @@ const Product: React.FC<Props> = ({
         } bg-white gap-4 pb-4 rounded-2xl`}
         style={{ boxShadow: '0px 3px 3px 0 rgba(0, 0, 0, 0.06)' }}
     >
-        <img
-            src={image}
-            alt={name}
-            className="object-cover w-full rounded-2xl"
-            style={{ height: 133 }}
-        />
+        <Link href={`/products/${name}`}>
+            <img
+                src={image}
+                alt={name}
+                className="object-cover w-full cursor-pointer rounded-2xl"
+                style={{ height: 133 }}
+            />
+        </Link>
 
         {description && starCount ? null : (
             <div className="flex flex-col items-center gap-1 font-poppins">

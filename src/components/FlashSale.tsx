@@ -1,4 +1,5 @@
 /* eslint-disable import/no-unresolved */
+import Link from 'next/link';
 import React from 'react';
 import { A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -44,11 +45,14 @@ const FlashSale = () => {
                     {slides.map((slide) => (
                         <SwiperSlide key={slide.image}>
                             <div className="flex w-64 gap-3 py-2 pl-2 bg-white rounded-xl font-poppins">
-                                <img
-                                    src={slide.image}
-                                    alt={slide.name}
-                                    className="w-16 h-20 rounded-xl"
-                                />
+                                <Link href={`/products/${slide.name}`}>
+                                    <img
+                                        src={slide.image}
+                                        alt={slide.name}
+                                        className="object-cover w-16 h-20 cursor-pointer rounded-xl"
+                                    />
+                                </Link>
+
                                 <div className="flex flex-col justify-between pb-2">
                                     <span
                                         className="font-medium tracking-wide"

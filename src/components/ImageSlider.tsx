@@ -39,6 +39,7 @@ const ImageSlider: React.FC<Props> = ({ pageName }) => {
                 centeredSlides
                 slidesPerView={pageName && pageName === 'all-categories' ? 1 : 3}
                 autoplay
+                loop
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}

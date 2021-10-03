@@ -28,7 +28,7 @@ const Navbar = () => {
                     key={category}
                     className="font-normal tracking-wider cursor-pointer text-bg-primary"
                 >
-                    <Link href={category.toLowerCase().replace(' ', '-')}>{category}</Link>
+                    <Link href={`/${category.toLowerCase().replace(' ', '-')}`}>{category}</Link>
                 </span>
             ))}
         </div>
