@@ -1,13 +1,22 @@
+/* eslint-disable import/no-unresolved */
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import OnSale from '../../components/OnSale';
 
 const SingleProduct = () => {
     const router = useRouter();
-
     const { singleProduct } = router.query;
+
+    const images = [
+        'https://picsum.photos/800/300/?random',
+        'https://picsum.photos/800/301/?random',
+        'https://picsum.photos/800/302/?random',
+        'https://picsum.photos/800/303/?random',
+        'https://picsum.photos/800/304/?random',
+    ];
 
     return (
         <div>
@@ -35,14 +44,549 @@ const SingleProduct = () => {
 
                 {/* single product details */}
                 <div className="flex mb-20 mx-p-w gap-14">
-                    <div className="w-full max-w-sm bg-red-400">product img slider</div>
+                    <div className="flex flex-col" style={{ width: 400 }}>
+                        {/* <div style={{ height: 266 }}> */}
+                        <div>
+                            <Swiper spaceBetween={20} loop centeredSlides>
+                                {images.map((image) => (
+                                    <SwiperSlide key={image}>
+                                        <img
+                                            src={image}
+                                            alt={`${singleProduct} - demo`}
+                                            className="object-cover w-full h-72"
+                                        />
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
 
-                    <div className="flex-1 bg-indigo-400">product details</div>
+                        <div
+                            className="flex items-center gap-2"
+                            style={{ height: 29, marginTop: 29 }}
+                        >
+                            <span
+                                className="mr-2 font-normal tracking-wide font-lato"
+                                style={{ color: '#121212', fontSize: 8 }}
+                            >
+                                Share
+                            </span>
+                            <img
+                                src="/linkedin-icon.svg"
+                                alt="linkedin-icon"
+                                className="cursor-pointer"
+                            />
+                            <img
+                                src="/twitter-icon.svg"
+                                alt="twitter-icon"
+                                className="cursor-pointer"
+                            />
+                            <img
+                                src="/facebook-icon.svg"
+                                alt="facebook-icon"
+                                className="cursor-pointer"
+                            />
+                            <img
+                                src="/whatsapp-icon.svg"
+                                alt="whatsapp-icon"
+                                className="cursor-pointer"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col flex-1">
+                        <span
+                            style={{ color: '#4D4D4D', fontSize: 9, marginBottom: 6 }}
+                            className="font-normal font-poppins"
+                        >
+                            SKU 12314124124
+                        </span>
+
+                        <span className="text-sm font-bold tracking-wide text-bg-primary">
+                            Premium Teeshirt Best High Quality
+                        </span>
+
+                        <div className="flex items-center mt-4 mb-8">
+                            <div className="flex items-center">
+                                <span
+                                    className="mr-2 font-black font-lato"
+                                    style={{ fontSize: 9, color: '#A1E887' }}
+                                >
+                                    4.0
+                                </span>
+                                {[...Array(4)].map(() => (
+                                    <img
+                                        src="/star-green.svg"
+                                        alt="star"
+                                        style={{ marginTop: -2 }}
+                                    />
+                                ))}
+                                <span
+                                    className="ml-1 font-normal font-lato"
+                                    style={{ color: '#BABABA', fontSize: 9 }}
+                                >
+                                    (223)
+                                </span>
+                            </div>
+
+                            <div
+                                className="flex items-center gap-1 px-2 mx-2 border border-t-0 border-b-0"
+                                style={{ borderColor: '#F2F2F2' }}
+                            >
+                                <img src="/tick-icon.svg" alt="icon" />
+                                <span
+                                    className="font-bold font-lato"
+                                    style={{ color: '#121212', fontSize: 9 }}
+                                >
+                                    4,320
+                                </span>
+                                <span
+                                    className="font-normal font-lato"
+                                    style={{ color: '#121212', fontSize: 9 }}
+                                >
+                                    Sold
+                                </span>
+                            </div>
+
+                            <div className="flex items-center flex-1 gap-1">
+                                <img src="/eye-icon.svg" alt="icon" />
+                                <span
+                                    className="font-bold font-lato"
+                                    style={{ color: '#121212', fontSize: 9 }}
+                                >
+                                    1.4k
+                                </span>
+                                <span
+                                    className="font-normal font-lato"
+                                    style={{ color: '#121212', fontSize: 9 }}
+                                >
+                                    Viewed
+                                </span>
+                            </div>
+
+                            <div className="flex items-center gap-3 cursor-pointer">
+                                <img src="/heart-icon.svg " alt="icon" />
+                                <span
+                                    className="font-bold tracking-wide font-lato"
+                                    style={{ color: '#A1E887', fontSize: 9 }}
+                                >
+                                    Add to wishlist
+                                </span>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center">
+                            <span
+                                className="text-lg font-semibold uppercase font-poppins"
+                                style={{ color: '#A1E887' }}
+                            >
+                                bdt 100
+                            </span>
+                            <div className="flex flex-1 gap-2 ml-3">
+                                <span
+                                    className="line-through uppercase"
+                                    style={{ color: '#8D8D8D', fontSize: 10 }}
+                                >
+                                    bdt 1000
+                                </span>
+                                <span
+                                    className="flex items-center justify-center w-6 font-semibold text-white rounded font-poppins"
+                                    style={{
+                                        fontSize: 7,
+                                        backgroundColor: '#3AB137',
+                                    }}
+                                >
+                                    20%
+                                </span>
+                            </div>
+                            <div>
+                                <img src="/logo.svg" alt="logo" />
+                            </div>
+                        </div>
+
+                        <div
+                            className="flex flex-col font-normal tracking-wide border-t-2 font-lato pr-52 pt-7 my-7"
+                            style={{ borderColor: '#EAEAEA', fontSize: 10 }}
+                        >
+                            <span>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta
+                                reprehenderit, officia itaque odit reiciendis velit iusto. Labore
+                                repellendus inventore quaerat?
+                            </span>
+
+                            <div className="flex flex-col gap-6 mt-6">
+                                {[
+                                    'direct full array',
+                                    'quantum dot technology',
+                                    'ambient mode',
+                                    'one remote control',
+                                ].map((i) => (
+                                    <span key={i} className="capitalize">
+                                        - {i}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="flex items-center justify-between mb-10">
+                            <span className="text-sm font-bold font-lato">Screen Size</span>
+
+                            <div className="flex gap-3">
+                                <span
+                                    className="flex items-center justify-center px-5 font-bold border rounded-md cursor-pointer h-9 font-lato"
+                                    style={{
+                                        borderColor: '#FFEADE',
+                                        color: '#7B7B7B',
+                                        fontSize: 10,
+                                    }}
+                                >
+                                    14-Inch
+                                </span>
+                                <span
+                                    className="flex items-center justify-center px-5 font-bold rounded-md cursor-pointer text-bg-primary h-9 font-lato"
+                                    style={{
+                                        fontSize: 10,
+                                        backgroundColor: '#A1E887',
+                                    }}
+                                >
+                                    24-Inch
+                                </span>
+                                <span
+                                    className="flex items-center justify-center px-5 font-bold border rounded-md cursor-pointer h-9 font-lato"
+                                    style={{
+                                        borderColor: '#FFEADE',
+                                        color: '#7B7B7B',
+                                        fontSize: 10,
+                                    }}
+                                >
+                                    32-Inch
+                                </span>
+                                <span
+                                    className="flex items-center justify-center px-5 font-bold border rounded-md cursor-pointer h-9 font-lato"
+                                    style={{
+                                        borderColor: '#FFEADE',
+                                        color: '#7B7B7B',
+                                        fontSize: 10,
+                                    }}
+                                >
+                                    60-Inch
+                                </span>
+                            </div>
+                        </div>
+
+                        <div className="flex justify-between">
+                            <div
+                                className="flex items-center gap-10 px-3 border rounded-md h-9"
+                                style={{ borderColor: '#D8D8D8' }}
+                            >
+                                <span className="cursor-pointer">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="9.5"
+                                        height="2"
+                                        viewBox="0 0 9.5 2"
+                                    >
+                                        <rect
+                                            id="_-"
+                                            data-name="-"
+                                            width="9.5"
+                                            height="2"
+                                            fill="#d2d2d2"
+                                        />
+                                    </svg>
+                                </span>
+                                <span
+                                    className="font-bold text-bg-primary font-lato"
+                                    style={{ fontSize: 10 }}
+                                >
+                                    1
+                                </span>
+                                <span className="cursor-pointer">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="8.784"
+                                        height="9.045"
+                                        viewBox="0 0 8.784 9.045"
+                                    >
+                                        <path
+                                            id="_"
+                                            data-name="+"
+                                            d="M3788.783,558.443v3.69h3.5v1.647h-3.5v3.708h-1.8V563.78H3783.5v-1.647h3.483v-3.69Z"
+                                            transform="translate(-3783.5 -558.443)"
+                                            fill="#d2d2d2"
+                                        />
+                                    </svg>
+                                </span>
+                            </div>
+
+                            <div className="flex gap-2">
+                                <span
+                                    className="flex items-center font-bold uppercase border rounded-md cursor-pointer px-9 h-9 text-bg-primary font-lato"
+                                    style={{ borderColor: '#D8D8D8', fontSize: 10 }}
+                                >
+                                    buy
+                                </span>
+                                <span
+                                    className="flex items-center justify-center w-32 font-bold text-white uppercase rounded-md cursor-pointer bg-bg-primary font-lato h-9"
+                                    style={{ fontSize: 10 }}
+                                >
+                                    add to cart
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 {/* single product review */}
-                <div className="mb-20 mx-p-w">
-                    single product review section (under construction)
+                <div className="flex justify-between mb-20 mx-p-w">
+                    <div
+                        className="flex flex-col items-center px-6 py-10 text-white rounded-md bg-bg-primary"
+                        style={{ maxHeight: 478 }}
+                    >
+                        <div>
+                            <span className="font-semibold font-poppins" style={{ fontSize: 50 }}>
+                                4.0
+                            </span>
+                            <span
+                                style={{ color: '#70606F' }}
+                                className="text-xs font-semibold font-poppins"
+                            >
+                                /5
+                            </span>
+                        </div>
+
+                        <div className="flex gap-2 mt-1 mb-3">
+                            {[...Array(4)].map((star, index) => (
+                                // eslint-disable-next-line react/no-array-index-key
+                                <span key={index}>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="17.227"
+                                        height="15.661"
+                                        viewBox="0 0 17.227 15.661"
+                                    >
+                                        <path
+                                            id="star"
+                                            d="M3342.589,759.045l-2.1,4.049-4.7.651a.967.967,0,0,0-.57,1.67l3.4,3.15-.8,4.45a1.02,1.02,0,0,0,1.494,1.031l4.209-2.1,4.208,2.1a1.021,1.021,0,0,0,1.494-1.031l-.8-4.45,3.4-3.15a.967.967,0,0,0-.57-1.67l-4.7-.651-2.1-4.049A1.056,1.056,0,0,0,3342.589,759.045Z"
+                                            transform="translate(-3334.9 -758.5)"
+                                            fill="#ebff00"
+                                        />
+                                    </svg>
+                                </span>
+                            ))}
+                        </div>
+
+                        <div
+                            className="font-normal tracking-wide font-poppins"
+                            style={{ fontSize: 10 }}
+                        >
+                            223 Reviews
+                        </div>
+
+                        <div className="flex flex-col gap-6 mt-12">
+                            {[
+                                { star: 5, count: 186 },
+                                { star: 4, count: 18 },
+                                { star: 3, count: 12 },
+                                { star: 2, count: 5 },
+                                { star: 1, count: 2 },
+                            ].map((item) => (
+                                <div key={item.star} className="flex flex-col w-40 gap-2">
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex gap-1">
+                                            {[...Array(item.star)].map((e, i) => (
+                                                // eslint-disable-next-line react/no-array-index-key
+                                                <span key={`${item.star} - ${i}`}>
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="8"
+                                                        height="7"
+                                                        viewBox="0 0 8 7"
+                                                    >
+                                                        <path
+                                                            id="star"
+                                                            d="M3329.071,845.744l-.976,1.81-2.185.291a.429.429,0,0,0-.264.746l1.58,1.408-.374,1.989a.471.471,0,0,0,.694.461l1.954-.939,1.955.939a.471.471,0,0,0,.694-.461l-.374-1.989,1.58-1.408a.429.429,0,0,0-.265-.746l-2.185-.291-.977-1.81A.5.5,0,0,0,3329.071,845.744Z"
+                                                            transform="translate(-3325.5 -845.5)"
+                                                            fill="#fff"
+                                                        />
+                                                    </svg>
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <span
+                                            className="font-normal tracking-wide font-poppins"
+                                            style={{ fontSize: 9 }}
+                                        >
+                                            {item.count}
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <div
+                                            style={{
+                                                height: 5,
+                                                borderRadius: 2.5,
+                                                backgroundColor: '#70606F',
+                                            }}
+                                            className="relative w-full"
+                                        >
+                                            <div
+                                                className="absolute top-0 bottom-0 left-0 bg-white"
+                                                style={{
+                                                    borderRadius: 2.5,
+                                                    width: `${(item.count * 100) / 223}%`,
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="flex-1" style={{ maxWidth: 950 }}>
+                        <div
+                            style={{ backgroundColor: '#F9F9F9', height: 49 }}
+                            className="flex items-center gap-16 px-10 rounded-md"
+                        >
+                            <span
+                                className="relative flex items-center h-full text-xs font-semibold font-poppins"
+                                style={{ color: '#A1E887' }}
+                            >
+                                Description
+                                <span className="absolute bottom-0 transform -translate-x-1/2 left-1/2">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="36"
+                                        height="3"
+                                        viewBox="0 0 36 3"
+                                    >
+                                        <path
+                                            id="background"
+                                            d="M3541.5,696.5h30a3,3,0,0,1,3,3h-36A3,3,0,0,1,3541.5,696.5Z"
+                                            transform="translate(-3538.5 -696.5)"
+                                            fill="#493548"
+                                        />
+                                    </svg>
+                                </span>
+                            </span>
+                            <span
+                                className="text-xs font-normal cursor-pointer font-poppins"
+                                style={{ color: '#9F9F9F' }}
+                            >
+                                Specification
+                            </span>
+                            <span
+                                className="text-xs font-normal cursor-pointer font-poppins"
+                                style={{ color: '#9F9F9F' }}
+                            >
+                                Discussion
+                            </span>
+                            <span
+                                className="text-xs font-normal cursor-pointer font-poppins"
+                                style={{ color: '#9F9F9F' }}
+                            >
+                                Reviews (223)
+                            </span>
+                        </div>
+
+                        <div className="flex flex-col gap-16 mt-16 mx-7">
+                            <div className="flex flex-col gap-3">
+                                <span className="text-xs font-bold font-lato">
+                                    See the best picture no matter where you sit
+                                </span>
+                                <span
+                                    className="font-normal font-lato"
+                                    style={{ color: '#454545', fontSize: 9 }}
+                                >
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                                    enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                    nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                    nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                    sunt in culpa qui officia deserunt mollit anim id est laborum
+                                </span>
+                            </div>
+
+                            <div
+                                className="flex justify-end px-12 py-8 mb-7"
+                                style={{ backgroundColor: '#C4C4C4' }}
+                            >
+                                <div
+                                    className="flex flex-col flex-1 gap-5 text-right text-white"
+                                    style={{ maxWidth: 176 }}
+                                >
+                                    <span className="text-2xl font-medium tracking-wide font-poppins">
+                                        Your new home office
+                                    </span>
+                                    <span
+                                        className="font-medium tracking-wide font-poppins"
+                                        style={{ fontSize: 9 }}
+                                    >
+                                        Remote Acess
+                                    </span>
+                                    <span
+                                        className="font-light tracking-wide font-lato"
+                                        style={{ fontSize: 8 }}
+                                    >
+                                        Get office work done on your TV at home. Remote Access lets
+                                        you mirror your computer’s display on the TV screen
+                                        wirelessly.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col gap-3">
+                                <span className="text-xs font-bold font-lato">
+                                    Powerful intelligence for perfection
+                                </span>
+                                <span
+                                    className="font-normal font-lato"
+                                    style={{ color: '#454545', fontSize: 9 }}
+                                >
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                                    quae ab illo inventore veritatis et quasi architecto beatae
+                                    vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                                    voluptas sit aspernatur aut odit aut fugit, sed quia
+                                    consequuntur magni dolores eos qui ratione voluptatem sequi
+                                    nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
+                                    sit amet, consectetur, adipisci velit, sed quia non numquam eius
+                                    modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+                                    voluptatem. Ut enim ad minima veniam, quis nostrum
+                                    exercitationem ullam corporis suscipit laboriosam, nisi ut
+                                    aliquid ex ea commodi consequatur? Quis autem vel eum iure
+                                    reprehenderit qui in ea voluptate velit esse quam nihil
+                                    molestiae consequatur, vel illum qui dolorem eum fugiat quo
+                                    voluptas nulla pariatur?
+                                </span>
+                            </div>
+
+                            <div className="flex flex-col gap-3">
+                                <span className="text-xs font-bold font-lato">
+                                    The power of less
+                                </span>
+                                <span
+                                    className="font-normal font-lato"
+                                    style={{ color: '#454545', fontSize: 9 }}
+                                >
+                                    At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                                    blanditiis praesentium voluptatum deleniti atque corrupti quos
+                                    dolores et quas molestias excepturi sint occaecati cupiditate
+                                    non provident, similique sunt in culpa qui officia deserunt
+                                    mollitia animi, id est laborum et dolorum fuga. Et harum quidem
+                                    rerum facilis est et expedita distinctio. Nam libero tempore,
+                                    cum soluta nobis est eligendi optio cumque nihil impedit quo
+                                    minus id quod maxime placeat facere possimus, omnis voluptas
+                                    assumenda est, omnis dolor repellendus. Temporibus autem
+                                    quibusdam et aut officiis debitis aut rerum necessitatibus saepe
+                                    eveniet ut et voluptates repudiandae sint et molestiae non
+                                    recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+                                    ut aut reiciendis voluptatibus maiores alias consequatur aut
+                                    perferendis doloribus asperiores repellat
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <OnSale />

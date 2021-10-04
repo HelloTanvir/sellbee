@@ -8,14 +8,6 @@ interface Props {
 }
 
 const ImageSlider: React.FC<Props> = ({ pageName }) => {
-    // const images = [
-    //     'https://i.pinimg.com/236x/f4/a9/88/f4a988da04447569eb2737fd90abf7db.jpg',
-    //     'https://i.pinimg.com/236x/fc/30/03/fc300326f05b858943d9c7b6d5902ee0.jpg',
-    //     'https://i.pinimg.com/236x/f3/83/4f/f3834ffead6ebb10f4f797f613aa2ab2.jpg',
-    //     'https://i.pinimg.com/564x/6f/c1/f4/6fc1f4b528dbbfcee91c65edba08942a.jpg',
-    //     'https://images.pexels.com/photos/897624/pexels-photo-897624.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260',
-    // ];
-
     const images = [
         'https://picsum.photos/800/300/?random',
         'https://picsum.photos/800/301/?random',

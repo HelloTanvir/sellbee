@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const BestDeals = () => {
@@ -88,11 +89,13 @@ const BestDeals = () => {
                         className="flex justify-between"
                         style={{ height: 70 }}
                     >
-                        <img
-                            src={product.image}
-                            alt={product.name}
-                            className="object-cover w-16 h-full rounded-xl"
-                        />
+                        <Link href={`/products/${product.name}`}>
+                            <img
+                                src={product.image}
+                                alt={product.name}
+                                className="object-cover w-16 h-full cursor-pointer rounded-xl"
+                            />
+                        </Link>
 
                         <div className="flex flex-col justify-between">
                             <span className="font-medium font-poppins" style={{ fontSize: 9 }}>

@@ -9,10 +9,10 @@ import Select from '@mui/material/Select';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import React, { useState } from 'react';
-import CategorizedProducts from '../components/CategorizedProducts';
-import ImageSlider from '../components/ImageSlider';
-import OnSale from '../components/OnSale';
-import RangeSlider from '../components/RangeSlider';
+import CategorizedProducts from '../../components/CategorizedProducts';
+import ImageSlider from '../../components/ImageSlider';
+import OnSale from '../../components/OnSale';
+import RangeSlider from '../../components/RangeSlider';
 
 const AllCategories: NextPage = () => {
     const [openCategory, setOpenCategory] = useState(false);
