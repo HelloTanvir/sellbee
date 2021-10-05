@@ -9,7 +9,202 @@ const Checkout = () => (
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main className="mt-10 mb-7">checkout</main>
+        <main className="flex mt-10 mb-7 gap-14 mx-p-w">
+            <div className="flex flex-col flex-1 gap-3">
+                <span className="mb-3 font-semibold font-poppins" style={{ fontSize: 15 }}>
+                    Shipping Details
+                </span>
+
+                {/* input row */}
+                <div className="flex gap-7">
+                    <div className="flex flex-col flex-1 gap-2">
+                        <span className="font-normal font-lato" style={{ fontSize: 9 }}>
+                            First Name
+                        </span>
+                        <input
+                            type="text"
+                            className="w-full border rounded-md outline-none h-9"
+                            style={{ borderColor: '#D4D4D4' }}
+                        />
+                    </div>
+
+                    <div className="flex flex-col flex-1 gap-2">
+                        <span className="font-normal font-lato" style={{ fontSize: 9 }}>
+                            First Name
+                        </span>
+                        <input
+                            type="text"
+                            className="w-full border rounded-md outline-none h-9"
+                            style={{ borderColor: '#D4D4D4' }}
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div className="px-5 py-4 border rounded-md">
+                <div
+                    className="mb-4 font-semibold tracking-wide font-poppins"
+                    style={{ fontSize: 10 }}
+                >
+                    My Orders
+                </div>
+
+                <div
+                    className="flex flex-col gap-4 pb-5 mb-5 border-b"
+                    style={{ borderColor: '#F3F3F3' }}
+                >
+                    <div className="flex">
+                        <span
+                            className="font-semibold font-lato"
+                            style={{ color: '#1D1D1D', fontSize: 10 }}
+                        >
+                            1x
+                        </span>
+                        <span
+                            className="ml-5 font-normal font-lato"
+                            style={{ color: '#8D8D8D', fontSize: 9, maxWidth: 132 }}
+                        >
+                            LED Monitor With High Quality In The World
+                        </span>
+                        <span
+                            className="flex-1 font-semibold text-right font-lato "
+                            style={{ color: '#1D1D1D', fontSize: 10 }}
+                        >
+                            976.33
+                        </span>
+                    </div>
+
+                    <div className="flex">
+                        <span
+                            className="font-semibold font-lato"
+                            style={{ color: '#1D1D1D', fontSize: 10 }}
+                        >
+                            1x
+                        </span>
+                        <span
+                            className="ml-5 font-normal font-lato"
+                            style={{ color: '#8D8D8D', fontSize: 9, maxWidth: 132 }}
+                        >
+                            LED Monitor With High Quality In The World
+                        </span>
+                        <span
+                            className="flex-1 font-semibold text-right font-lato "
+                            style={{ color: '#1D1D1D', fontSize: 10 }}
+                        >
+                            976.33
+                        </span>
+                    </div>
+                </div>
+
+                <div
+                    className="flex flex-col gap-3 pb-5 mb-5 border-b"
+                    style={{ borderColor: '#F3F3F3' }}
+                >
+                    <div className="flex justify-between">
+                        <span
+                            className="font-normal font-lato"
+                            style={{ color: '#8D8D8D', fontSize: 9 }}
+                        >
+                            Subtotal
+                        </span>
+                        <span
+                            className="font-semibold font-lato"
+                            style={{ fontSize: 10, color: '#1D1D1D' }}
+                        >
+                            1,952.66
+                        </span>
+                    </div>
+
+                    <div className="flex justify-between">
+                        <span
+                            className="font-normal font-lato"
+                            style={{ color: '#8D8D8D', fontSize: 9 }}
+                        >
+                            Shipping
+                        </span>
+                        <span
+                            className="font-semibold font-lato"
+                            style={{ fontSize: 10, color: '#1D1D1D' }}
+                        >
+                            0
+                        </span>
+                    </div>
+
+                    <div className="flex justify-between">
+                        <span
+                            className="font-normal font-lato"
+                            style={{ color: '#8D8D8D', fontSize: 9 }}
+                        >
+                            Tax
+                        </span>
+                        <span
+                            className="font-semibold font-lato"
+                            style={{ fontSize: 10, color: '#1D1D1D' }}
+                        >
+                            4.00
+                        </span>
+                    </div>
+                </div>
+
+                <div
+                    className="flex justify-between pb-5 mb-5 border-b"
+                    style={{ borderColor: '#F3F3F3' }}
+                >
+                    <span
+                        className="font-medium tracking-wide font-poppins"
+                        style={{ fontSize: 9 }}
+                    >
+                        Order Total
+                    </span>
+                    <span className="text-sm font-semibold font-poppins text-bg-primary">
+                        1956.66
+                    </span>
+                </div>
+
+                <div className="flex flex-col gap-4 mb-6">
+                    <span className="font-semibold font-poppins" style={{ fontSize: 10 }}>
+                        Payment
+                    </span>
+
+                    <div className="flex items-center gap-3">
+                        <input type="checkbox" className="cursor-pointer" />
+                        <span className="font-normal font-lato" style={{ fontSize: 9 }}>
+                            Direct Bank Transfer
+                        </span>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                        <input type="checkbox" className="cursor-pointer" />
+                        <span className="font-normal font-lato" style={{ fontSize: 9 }}>
+                            Paypol
+                        </span>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                        <input type="checkbox" className="cursor-pointer" />
+                        <span className="font-normal font-lato" style={{ fontSize: 9 }}>
+                            Cash On Delivery
+                        </span>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    className="px-20 py-3 font-bold uppercase rounded-md bg-bg-primary font-lato"
+                    style={{ fontSize: 10, color: '#FBFBFB' }}
+                >
+                    place order
+                </button>
+
+                <div
+                    className="mt-5 font-normal font-lato"
+                    style={{ fontSize: 9, color: '#8D8D8D', maxWidth: 226 }}
+                >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore e
+                </div>
+            </div>
+        </main>
     </div>
 );
 
