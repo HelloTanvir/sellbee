@@ -30,7 +30,7 @@ const Checkout = () => (
 
                     <div className="flex flex-col flex-1 gap-2">
                         <span className="font-normal font-lato" style={{ fontSize: 9 }}>
-                            First Name
+                            Last Name
                         </span>
                         <input
                             type="text"
