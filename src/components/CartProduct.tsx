@@ -13,7 +13,7 @@ const CartProduct: React.FC<Props> = ({ selected }) => (
 
         <span className="w-20 h-20 mx-5">
             <img
-                src="https://picsum.photos/800/300/?random"
+                src="https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg"
                 alt="product"
                 className="object-cover w-full h-full rounded-md"
             />

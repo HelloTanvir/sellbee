@@ -11,11 +11,11 @@ const SingleProduct = () => {
     const { singleProduct } = router.query;
 
     const images = [
-        'https://picsum.photos/800/300/?random',
-        'https://picsum.photos/800/301/?random',
-        'https://picsum.photos/800/302/?random',
-        'https://picsum.photos/800/303/?random',
-        'https://picsum.photos/800/304/?random',
+        'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+        'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+        'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+        'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+        'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
     ];
 
     return (

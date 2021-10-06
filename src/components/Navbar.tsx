@@ -2,15 +2,15 @@ import Link from 'next/link';
 
 const Navbar = () => {
     const categories = [
-        'All Categories',
-        'Accessories',
-        'Smartphone',
-        'Computer',
-        'Gaming Equipment',
-        'TV & Monitors',
-        'Headphones',
-        'Speaker',
-        'HOT DEALS',
+        { title: 'All Categories', link: 'all-categories' },
+        { title: 'Accessories', link: 'accessories' },
+        { title: 'Smartphone', link: 'smartphone' },
+        { title: 'Computer', link: 'computer' },
+        { title: 'Gaming Equipment', link: 'gaming-equipment' },
+        { title: 'TV & Monitors', link: 'tv-monitors' },
+        { title: 'Headphones', link: 'headphones' },
+        { title: 'Speaker', link: 'speaker' },
+        { title: 'HOT DEALS', link: 'hot-deals' },
     ];
 
     return (
@@ -28,7 +28,7 @@ const Navbar = () => {
                     key={category}
                     className="font-normal tracking-wider cursor-pointer text-bg-primary"
                 >
-                    <Link href={`/${category.toLowerCase().replace(' ', '-')}`}>{category}</Link>
+                    <Link href={`/categories/${category.link}`}>{category.title}</Link>
                 </span>
             ))}
         </div>

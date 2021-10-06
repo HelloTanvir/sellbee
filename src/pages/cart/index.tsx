@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 import CartProduct from '../../components/CartProduct';
 
@@ -103,13 +104,15 @@ const Cart = () => (
                         </span>
                     </div>
 
-                    <button
-                        type="button"
-                        className="px-20 py-3 font-bold uppercase rounded-md bg-bg-primary font-lato"
-                        style={{ fontSize: 10, color: '#FBFBFB' }}
-                    >
-                        checkout
-                    </button>
+                    <Link href="/checkout">
+                        <button
+                            type="button"
+                            className="px-20 py-3 font-bold uppercase rounded-md bg-bg-primary font-lato"
+                            style={{ fontSize: 10, color: '#FBFBFB' }}
+                        >
+                            checkout
+                        </button>
+                    </Link>
 
                     <span
                         className="self-center font-bold cursor-pointer font-lato text-bg-primary hover:underline"

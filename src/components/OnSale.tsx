@@ -3,68 +3,84 @@ import Product from './Product';
 
 const OnSale = () => {
     const products = [
+        // {
+        //     name: 'test 1',
+        //     oldPrice: 100,
+        //     newPrice: 50,
+        //     stock: 100,
+        //     image: 'https://picsum.photos/800/300/?random',
+        // },
         {
+            id: 1,
             name: 'test 1',
             oldPrice: 100,
             newPrice: 50,
             stock: 100,
-            image: 'https://picsum.photos/800/300/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 2,
             name: 'test 2',
             oldPrice: 100,
             newPrice: 50,
             stock: 100,
-            image: 'https://picsum.photos/800/301/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 3,
             name: 'test 3',
             oldPrice: 100,
             newPrice: 50,
             stock: 100,
-            image: 'https://picsum.photos/800/302/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 4,
             name: 'test 4',
             oldPrice: 100,
             newPrice: 50,
             stock: 100,
-            image: 'https://picsum.photos/800/303/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 5,
             name: 'test 5',
             oldPrice: 100,
             newPrice: 50,
             stock: 100,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 6,
             name: 'test 6',
             oldPrice: 100,
             newPrice: 50,
             stock: 100,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 7,
             name: 'test 7',
             oldPrice: 100,
             newPrice: 50,
             stock: 100,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 8,
             name: 'test 8',
             oldPrice: 100,
             newPrice: 50,
             stock: 100,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 9,
             name: 'test 9',
             oldPrice: 100,
             newPrice: 50,
             stock: 100,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
     ];
 
@@ -97,7 +113,7 @@ const OnSale = () => {
             >
                 {products.map((product) => (
                     <Product
-                        key={product.image}
+                        key={product.id}
                         name={product.name}
                         oldPrice={product.oldPrice}
                         newPrice={product.newPrice}

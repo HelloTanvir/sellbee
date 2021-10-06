@@ -5,61 +5,76 @@ import Product from './Product';
 
 const TopTenProducts = () => {
     const products = [
+        // {
+        //     name: 'test 1',
+        //     oldPrice: 100,
+        //     newPrice: 50,
+        //     description: '4.3m solid',
+        //     starCount: 4,
+        //     image: 'https://picsum.photos/800/300/?random',
+        // },
         {
+            id: 1,
             name: 'test 1',
             oldPrice: 100,
             newPrice: 50,
             description: '4.3m solid',
             starCount: 4,
-            image: 'https://picsum.photos/800/300/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 2,
             name: 'test 2',
             oldPrice: 100,
             newPrice: 50,
             description: '4.3m solid',
             starCount: 4,
-            image: 'https://picsum.photos/800/301/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 3,
             name: 'test 3',
             oldPrice: 100,
             newPrice: 50,
             description: '4.3m solid',
             starCount: 4,
-            image: 'https://picsum.photos/800/302/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 4,
             name: 'test 4',
             oldPrice: 100,
             newPrice: 50,
             description: '4.3m solid',
             starCount: 4,
-            image: 'https://picsum.photos/800/303/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 5,
             name: 'test 5',
             oldPrice: 100,
             newPrice: 50,
             description: '4.3m solid',
             starCount: 4,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 6,
             name: 'test 6',
             oldPrice: 100,
             newPrice: 50,
             description: '4.3m solid',
             starCount: 4,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 7,
             name: 'test 7',
             oldPrice: 100,
             newPrice: 50,
             description: '4.3m solid',
             starCount: 4,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
     ];
 
@@ -78,7 +93,7 @@ const TopTenProducts = () => {
             <div className="w-full" style={{ maxWidth: '70%' }}>
                 <Swiper className="w-full" slidesPerView={4} spaceBetween={30}>
                     {products.map((product) => (
-                        <SwiperSlide key={product.image}>
+                        <SwiperSlide key={product.id}>
                             <div className="w-48">
                                 <Product
                                     name={product.name}

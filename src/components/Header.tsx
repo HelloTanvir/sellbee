@@ -42,7 +42,9 @@ const Header = () => (
             <BsGrid />
 
             {/* backet */}
-            <GiShoppingCart />
+            <Link href="/cart">
+                <GiShoppingCart className="cursor-pointer" />
+            </Link>
 
             {/* profile btn */}
             <div

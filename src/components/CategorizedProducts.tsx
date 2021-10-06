@@ -2,91 +2,109 @@ import React from 'react';
 import { RiArrowDownSFill } from 'react-icons/ri';
 import Product from './Product';
 
-const CategorizedProducts = () => {
+interface Props {
+    categoryTitle: string;
+}
+
+const CategorizedProducts: React.FC<Props> = ({ categoryTitle }) => {
     const products = [
         {
+            id: 1,
             name: 'test 1',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/300/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 2,
             name: 'test 2',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/301/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 3,
             name: 'test 3',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/302/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 4,
             name: 'test 4',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/303/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 5,
             name: 'test 5',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 6,
             name: 'test 6',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 7,
             name: 'test 7',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
-            name: 'test 1',
+            id: 8,
+            name: 'test 8',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/300/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
-            name: 'test 2',
+            id: 9,
+            name: 'test 9',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/301/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
-            name: 'test 3',
+            id: 10,
+            name: 'test 10',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/302/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
-            name: 'test 4',
+            id: 11,
+            name: 'test 11',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/303/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
-            name: 'test 5',
+            id: 12,
+            name: 'test 12',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/305/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
-            name: 'test 6',
+            id: 13,
+            name: 'test 13',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
-            name: 'test 4',
+            id: 14,
+            name: 'test 14',
             oldPrice: 100,
             newPrice: 50,
-            image: 'https://picsum.photos/800/303/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
     ];
 
@@ -94,7 +112,7 @@ const CategorizedProducts = () => {
         <div>
             <div className="flex items-center justify-between mb-7">
                 <span className="text-2xl font-semibold tracking-wide font-poppins">
-                    Laptop Products
+                    {categoryTitle}
                 </span>
                 <div className="flex items-center gap-3">
                     <svg
@@ -152,7 +170,7 @@ const CategorizedProducts = () => {
             >
                 {products.map((product) => (
                     <Product
-                        key={product.image}
+                        key={product.id}
                         name={product.name}
                         oldPrice={product.oldPrice}
                         newPrice={product.newPrice}

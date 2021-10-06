@@ -3,68 +3,84 @@ import React from 'react';
 
 const BestDeals = () => {
     const products = [
+        // {
+        //     name: 'test 1',
+        //     price: 50,
+        //     starCount: 4,
+        //     reviewCount: 12,
+        //     image: 'https://picsum.photos/800/300/?random',
+        // },
         {
+            id: 1,
             name: 'test 1',
             price: 50,
             starCount: 4,
             reviewCount: 12,
-            image: 'https://picsum.photos/800/300/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 2,
             name: 'test 2',
             price: 50,
             starCount: 4,
             reviewCount: 12,
-            image: 'https://picsum.photos/800/301/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 3,
             name: 'test 3',
             price: 50,
             starCount: 4,
             reviewCount: 12,
-            image: 'https://picsum.photos/800/302/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 4,
             name: 'test 4',
             price: 50,
             starCount: 4,
             reviewCount: 12,
-            image: 'https://picsum.photos/800/303/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 5,
             name: 'test 5',
             price: 50,
             starCount: 4,
             reviewCount: 12,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 6,
             name: 'test 6',
             price: 50,
             starCount: 4,
             reviewCount: 12,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 7,
             name: 'test 7',
             price: 50,
             starCount: 4,
             reviewCount: 12,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 8,
             name: 'test 8',
             price: 50,
             starCount: 4,
             reviewCount: 12,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
         {
+            id: 9,
             name: 'test 9',
             price: 50,
             starCount: 4,
             reviewCount: 12,
-            image: 'https://picsum.photos/800/304/?random',
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
         },
     ];
 
@@ -84,11 +100,7 @@ const BestDeals = () => {
                 }}
             >
                 {products.map((product) => (
-                    <div
-                        key={product.image}
-                        className="flex justify-between"
-                        style={{ height: 70 }}
-                    >
+                    <div key={product.id} className="flex justify-between" style={{ height: 70 }}>
                         <Link href={`/products/${product.name}`}>
                             <img
                                 src={product.image}

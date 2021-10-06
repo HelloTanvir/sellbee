@@ -6,11 +6,56 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 const FlashSale = () => {
     const slides = [
-        { name: 'test 1', price: 100, count: 100, image: 'https://picsum.photos/800/300/?random' },
-        { name: 'test 2', price: 100, count: 100, image: 'https://picsum.photos/800/301/?random' },
-        { name: 'test 3', price: 100, count: 100, image: 'https://picsum.photos/800/302/?random' },
-        { name: 'test 4', price: 100, count: 100, image: 'https://picsum.photos/800/303/?random' },
-        { name: 'test 5', price: 100, count: 100, image: 'https://picsum.photos/800/304/?random' },
+        // { name: 'test 1', price: 100, count: 100, image: 'https://picsum.photos/800/300/?random' },
+        {
+            id: 1,
+            name: 'test 1',
+            price: 100,
+            count: 100,
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+        },
+        {
+            id: 2,
+            name: 'test 2',
+            price: 100,
+            count: 100,
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+        },
+        {
+            id: 3,
+            name: 'test 3',
+            price: 100,
+            count: 100,
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+        },
+        {
+            id: 4,
+            name: 'test 4',
+            price: 100,
+            count: 100,
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+        },
+        {
+            id: 5,
+            name: 'test 5',
+            price: 100,
+            count: 100,
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+        },
+        {
+            id: 6,
+            name: 'test 6',
+            price: 100,
+            count: 100,
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+        },
+        {
+            id: 7,
+            name: 'test 7',
+            price: 100,
+            count: 100,
+            image: 'https://i.pinimg.com/564x/c7/f6/bd/c7f6bdef61e2558147339c0057eee2e8.jpg',
+        },
     ];
 
     return (
@@ -43,7 +88,7 @@ const FlashSale = () => {
                     // pagination={{ clickable: true }}
                 >
                     {slides.map((slide) => (
-                        <SwiperSlide key={slide.image}>
+                        <SwiperSlide key={slide.id}>
                             <div className="flex w-64 gap-3 py-2 pl-2 bg-white rounded-xl font-poppins">
                                 <Link href={`/products/${slide.name}`}>
                                     <img
