@@ -25,7 +25,7 @@ const Navbar = () => {
         >
             {categories.map((category) => (
                 <span
-                    key={category}
+                    key={category.title}
                     className="font-normal tracking-wider cursor-pointer text-bg-primary"
                 >
                     <Link href={`/categories/${category.link}`}>{category.title}</Link>
