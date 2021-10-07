@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { FaPhoneAlt, FaTruck } from 'react-icons/fa';
 import { GrMail } from 'react-icons/gr';
@@ -19,7 +20,9 @@ const Topbar = () => (
 
         <div className="flex items-center gap-3 pr-5 border-r" style={{ borderColor: '#FFC19E' }}>
             <FaTruck className="text-base" />
-            <span className="text-xs">Track Your Order</span>
+            <Link href="/track-order">
+                <span className="text-xs">Track Your Order</span>
+            </Link>
         </div>
 
         <div className="flex items-center gap-3">
