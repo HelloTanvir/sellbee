@@ -21,7 +21,7 @@ const Topbar = () => (
         <div className="flex items-center gap-3 pr-5 border-r" style={{ borderColor: '#FFC19E' }}>
             <FaTruck className="text-base" />
             <Link href="/track-order">
-                <span className="text-xs">Track Your Order</span>
+                <span className="text-xs cursor-pointer">Track Your Order</span>
             </Link>
         </div>
 
